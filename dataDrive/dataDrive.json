@@ -1,6 +1,12 @@
 {
-
   "Valid Information": {
+    "Carnival Cruise": "https://www.carnival.com/",
+    "Sail To": "The Bahamas",
+    "Sail From": "Baltimore, MD",
+    "Charleston": "Charleston, MD",
+    "Date": "012021",
+    "Duration": "6 - 9 Days",
+    "Min": "470",
+    "Max": "500"
   }
-
 }
