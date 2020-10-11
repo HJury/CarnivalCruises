@@ -35,6 +35,7 @@ public class ResultPage extends PageModel {
     private enum EnumWebElement {
         INPUT_NOT_FOUND("not found", "WebElement not found"),
         GRID_OR_LIST("Grid", "//ccl-view-result-grid[@class = 'ng-scope ng-isolate-scope']"),
+        FIRST_RESULT("First Result", "//ccl-view-result-grid[@class = 'ng-scope ng-isolate-scope']/article[1]/ccl-view-result-grid-item/div//ccl-route-map[@class = 'vrg-anchor-item__ccl-route-map roundtrip']"),
         BUTTON_PRICING("Pricing", "//a[@id = 'sfn-nav-pricing']"),
         BAR_SLIDE_BAR("SlideBar", "//a[@id = 'sfn-nav-pricing']//*[@class = 'sfn-title__chevron fa fa-chevron-down sfn-title__chevron--active']"),
         SLIDER_BAR_MIN("SliderBar Min", "//div[@class = 'rzslider ng-isolate-scope']//*[@ng-style = 'minPointerStyle']"),
@@ -66,6 +67,7 @@ public class ResultPage extends PageModel {
 
     /**
      * It uses the name of the element to get the xpath of the webelement
+     *
      * @param name
      * @return
      */
@@ -75,6 +77,7 @@ public class ResultPage extends PageModel {
 
     /**
      * It use the name of the element to generate a WebElement using the xpath that the enum returns.
+     *
      * @param name
      * @return A WebElement
      */
@@ -84,6 +87,7 @@ public class ResultPage extends PageModel {
 
     /**
      * It moves the SliderBar one space each 1.2 sec so the page have time to reload the information.
+     *
      * @param min
      * @param max
      */

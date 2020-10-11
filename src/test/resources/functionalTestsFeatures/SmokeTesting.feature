@@ -17,13 +17,13 @@ Feature: Smoke Testing
     When The user visualizes the results
     Then These are shown as a grid.
 
-  @EXECUTEt
+  @EXECUTE
   Scenario: The results are filter by price.
     Given The result are already shown
     When  The user filters by price using the Slide Bar
     Then The results change into the range.
 
-  @EXECUTEt
+  @EXECUTE
   Scenario: The results are sorted by price.
     Given The result are already shown
     When The user clicks on "Sort By Price" button
@@ -32,21 +32,22 @@ Feature: Smoke Testing
 # Selecting a cruise and getting more info about it.
     #As a user I want to choose one sail and learn more about the trip, so
     #that I will get more info about itinerary
-
+  @EXECUTE
   Scenario: The itinerary is loaded
     Given The user selects one of the cruises of the result set
     Then The user is redirected towards the "Itinerary" page
 
+  @EXECUTE
   Scenario: The about information is available.
     Given The user selects one of the cruises of the result set
     And The user is redirected towards the "Itinerary" page
-    When The user clicks on "Learn More" button of each day
-    Then The information of that day is displayed.
+    Then The information of each day is displayed when clicked.
 
+  @EXECUTE
   Scenario: The "Book Now" button is shown.
     Given The user selects one of the cruises of the result set
     And The user is redirected towards the "Itinerary" page
-    Then An "Book now" button is  displayed.
+    Then An "Book Now" button is  displayed.
 #----------------------------------------------------------------------
 #Redirection towards Booking is possible.
 

@@ -75,26 +75,31 @@ public class SmokeTestingStepsDefinitions {
     //<editor-fold desc="User Story#2">
     @Given("The user selects one of the cruises of the result set")
     public void theUserSelectsOneOfTheCruiseOfTheResultSet() {
+        smoketestingTasks.waitForTheResultToBeShown();
+        smoketestingTasks.theResultsAreShownAsAGrid();
+        smoketestingTasks.theUserClickOnTheFirstResult();
     }
 
     @Then("^The user is redirected towards the \"(.*?)\" page$")
     public void theUserIsRedirectedTowardsTheItineraryPage(String page) {
-
+        smoketestingTasks.theUserIsRedirected(page);
     }
 
     @When("The user clicks on \"Learn More\" button of each day")
     public void theUserClickOnLearnMoreButtonOfADay() {
-
     }
 
-    @Then("The information of that day is displayed.")
+    @Then("The information of each day is displayed when clicked.")
     public void theInformationOfThatDayIsDisplayed() {
-
+        smoketestingTasks.goToCurrentPage();
+        smoketestingTasks.waitForBanner();
+        smoketestingTasks.theInformationIsDisplayed();
     }
 
     @Then("An \"(.*?)\" button is  displayed.")
     public void anInformationOfThatDayIsDisplayed(String button) {
-
+        smoketestingTasks.waitForBanner();
+        smoketestingTasks.theElementIsDisplayed(button);
     }
     //</editor-fold>
 
