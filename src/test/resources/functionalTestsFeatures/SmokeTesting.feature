@@ -17,13 +17,13 @@ Feature: Smoke Testing
     When The user visualizes the results
     Then These are shown as a grid.
 
-  @EXECUTEt
+  @EXECUTE
   Scenario: The results are filter by price.
     Given The result are already shown
     When  The user filters by price using the Slide Bar
     Then The results change into the range.
 
-  @EXECUTEt
+  @EXECUTE
   Scenario: The results are sorted by price.
     Given The result are already shown
     When The user clicks on "Sort By Price" button
