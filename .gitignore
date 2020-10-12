@@ -25,6 +25,9 @@
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
+# Extent reports
+test-output
+
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries

@@ -37,4 +37,9 @@ The former command will run the tests and generates a report using the ExtentRep
 
 	../test-output/HtmlReport/AutomationExtentHtml.html
 
-The name of the scenarios will be duplicated due to the cross-browsing, so, each scenario runs twice, once for each scenario.
+The name of the scenarios will be duplicated due to the cross-browsing if the cross-browsing is actived, so, each scenario runs twice, once for each scenario.
+In order to actived the cross-browsing feature go to:
+
+	../testng.xml
+	
+And take out of comments from line 13 to 20.

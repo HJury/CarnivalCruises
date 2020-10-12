@@ -10,13 +10,13 @@
         </classes>
     </test>
 
-    <test preserve-order="true"
-          name="firefox">
+<!--    <test preserve-order="true"-->
+<!--          name="firefox">-->
 
-        <parameter name="browser" value="firefox"></parameter>
-        <classes>
-            <class name="testRunner.TestRunner"></class>
-        </classes>
-    </test>
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="testRunner.TestRunner"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 </suite>

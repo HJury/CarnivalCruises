@@ -43,20 +43,6 @@ public class Waits {
         }
     }
 
-    public static void waitUltilListGreaterThanZero(String elementList, WebDriver driver) {
-        try {
-            WebDriverWait wait;
-            ExpectedCondition e = new ExpectedCondition<Boolean>() {
-                public Boolean apply(WebDriver d) {
-                    return (driver.findElements(By.xpath(elementList)).size() > 0);
-                }
-            };
-            wait = new WebDriverWait(driver, 15);
-            wait.until(e);
-        } catch (TimeoutException e) {
-            Exceptions.exceptionMessage(e);
-        }
-    }
 
     public static void waitUltilIsDisplayedxpathShort(String xpath, WebDriver driver) {
         try {
@@ -72,33 +58,23 @@ public class Waits {
         try {
             WebDriverWait wait;
             wait = new WebDriverWait(driver, 6);
-            wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath(xpath))));
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(xpath)));
         } catch (TimeoutException e) {
             System.out.println("The short wait ended and the element: " + xpath + "  didn't get displayed");
         }
     }
 
-    public static void waitUntilInformationInFieldIsDisplayed(String element, WebDriver driver) {
+
+    public static void theUserIsRedirectedFrom(String page, WebDriver driver) {
         try {
             WebDriverWait wait;
             ExpectedCondition e = new ExpectedCondition<Boolean>() {
                 public Boolean apply(WebDriver d) {
-                    return (!driver.findElement(By.xpath(element)).getAttribute("Value").equals(""));
+                    return (!d.getCurrentUrl().equalsIgnoreCase(page));
                 }
             };
-            wait = new WebDriverWait(driver, 5);
+            wait = new WebDriverWait(driver, 10);
             wait.until(e);
-        } catch (TimeoutException e) {
-            System.out.println("The information of element: " + element + "wasn't displayed");
-            Exceptions.exceptionMessage(e);
-        }
-    }
-
-    public static void waitUntilIsInvisible(String xpath, WebDriver driver) {
-        try {
-            WebDriverWait wait;
-            wait = new WebDriverWait(driver, 15);
-            wait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElement(By.xpath(xpath))));
         } catch (TimeoutException e) {
             Exceptions.exceptionMessage(e);
         }

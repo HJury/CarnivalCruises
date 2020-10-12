@@ -26,21 +26,9 @@ public class UserActions {
         return this.driver.findElements(By.xpath(xpath));
     }
 
-    public boolean isThisPageRedirectedTowards(String page) {
-        Waits.waitUntilIsRedirectedTowards(page, driver);
-        return driver.getCurrentUrl().equalsIgnoreCase(page);
-    }
-
-    public boolean isThisElementDisplayed(WebElement element) {
-        if (element.isDisplayed())
-            return true;
-        return false;
-    }
-
-    public boolean isTheValueOfThisElementEqualsToByAttribute(WebElement element, String value, String attribute) {
-        if (element.getAttribute(attribute).equals(value))
-            return true;
-        return false;
+    public boolean theUserIsRedirectedFrom(String page) {
+        Waits.theUserIsRedirectedFrom(page, driver);
+        return !driver.getCurrentUrl().equalsIgnoreCase(page);
     }
 
 
